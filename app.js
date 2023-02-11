@@ -35,16 +35,27 @@ convertBtn.addEventListener('click', function () {
         `
 
     } else {
-        alert("please enter a number");
+        alert("We can't convert text, enter a number");
         input.value = "";
     }
  })
+
 
  resetBtn.addEventListener('click', function() {
     input.value = "";
     lengthText.innerHTML = ` 0 meters = 0 feet | 0 feet = 0 meter`
     volText.innerHTML = ` 0 litres = 0 gallons | 0 gallons = 0 litres`
     massText.innerHTML = ` 0 kilos = 0 pounds | 0 pounds = 0 kilos`
+
  })
+
+ const darkMode = document.getElementById("dark-mode");
+ const container = document.getElementById("convert-contain");
+ darkMode.addEventListener('click', function() {
+    container.classList.toggle("dark-mode")
+ })
+
+
+
 
 

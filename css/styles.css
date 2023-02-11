@@ -7,14 +7,19 @@
 :root {
   --header-bg: #6943FF;
   --white: #fff;
+  --section-bg: #fefefe;
   --text: #3D3D3D;
   --border: #B295FF;
   --main-bg: #F4F4F4;
   --heading-text: #5A537B;
   --para-text: #353535;
-  --dark-main-bg: #1F2937;
-  --dark-section-bg: #273549;
-  --dark-heading-text: #CCC1FF;
+}
+
+.dark-mode {
+  --main-bg: #1F2937;
+  --section-bg: #273549;
+  --heading-text: #CCC1FF;
+  --para-text: #fff;
 }
 
 body {
@@ -22,6 +27,15 @@ body {
   color: var(--white);
   text-align: center;
   font-family: "Inter", sans-serif;
+}
+body #dark-mode {
+  position: fixed;
+  height: 50px;
+  width: 64px;
+  border: none;
+  top: 5px;
+  right: 5px;
+  background-color: var(--header-bg);
 }
 
 .container {
@@ -101,7 +115,7 @@ section {
   height: 360px;
 }
 section div {
-  background-color: var(--white);
+  background-color: var(--section-bg);
   width: 90%;
   height: 100px;
   display: flex;
