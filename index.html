@@ -14,21 +14,24 @@
     <div class="container">
         <header>
             <h1>Metric/Imperial Unit Conversion</h1>
-            <input class="input" id="input-box"></input>
-            <button id="convert-btn">Convert</button>
+            <input class="input" id="input-box" maxlength="4"></input>
+            <div class="button-contain">
+                <button id="convert-btn">Convert</button>
+                <button id="reset-btn">Reset</button>
+            </div>
         </header>
         <section class="convert-contain">
             <div>
                 <h2>Length (Meter/Feet)</h2>
-                <p id="text"></p>
+                <p id="length-text"></p>
             </div>
             <div>
                 <h2>Volume (Liters/Gallons)</h2>
-                <p>some text</p>
+                <p id="vol-text"></p>
             </div>
             <div>
                 <h2>Mass (Kilograms/Pounds)</h2>
-                <p>some text</p>
+                <p id="mass-text"></p>
             </div>
         </section>
     </div>
