@@ -59,7 +59,7 @@ header .mode-toggle {
   }
 }
 header .mode-toggle label {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 header .mode-toggle #dark-mode {
   appearance: none;
