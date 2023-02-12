@@ -145,24 +145,25 @@ section {
     background-color: var(--main-bg);
     @include flex($dir: column, $just: space-evenly, $align: center);
     color: black;
-    height: 360px;
+    height: 440px;
 
     div {
         background-color: var(--section-bg);
         width: 90%;
-        height: 100px;
-        @include flex($dir: column, $just: space-evenly, $align: center);
+        height: 120px;
+        @include flex($dir: column, $just: center, $align: center);
         box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
         h2 {
             color: var(--heading-text);
             font-size: 1.2rem;
             font-weight: 600;
+            margin-bottom: 10px;
         }
         p {
             color: var(--para-text);
             font-weight: 400;
             font-size: .8rem;
-            height: 1rem;
+            height: 1.6rem;
         }
     }
 }
