@@ -7,10 +7,10 @@
 :root {
   --header-bg: #6943FF;
   --white: #fff;
-  --section-bg: #fefefe;
   --text: #3D3D3D;
   --border: #B295FF;
   --main-bg: #F4F4F4;
+  --section-bg: #fefefe;
   --heading-text: #5A537B;
   --para-text: #353535;
 }
@@ -28,15 +28,6 @@ body {
   text-align: center;
   font-family: "Inter", sans-serif;
 }
-body #dark-mode {
-  position: fixed;
-  height: 50px;
-  width: 64px;
-  border: none;
-  top: 5px;
-  right: 5px;
-  background-color: var(--header-bg);
-}
 
 .container {
   width: 80%;
@@ -52,6 +43,52 @@ header {
   height: 340px;
   background-color: var(--header-bg);
   padding: 10px;
+}
+header .mode-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60px;
+}
+@media (min-width: 768px) {
+  header .mode-toggle {
+    align-self: flex-end;
+    position: absolute;
+    top: 40px;
+  }
+}
+header .mode-toggle label {
+  font-size: 0.6rem;
+}
+header .mode-toggle #dark-mode {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 45px;
+  height: 25px;
+  border: 1px solid var(--white);
+  border-radius: 25px;
+  background-color: var(--white);
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+header .mode-toggle #dark-mode::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--text);
+  transition: left 0.3s ease, background-color 0.3s ease;
+}
+header .mode-toggle #dark-mode:checked {
+  background-color: var(--border);
+}
+header .mode-toggle #dark-mode:checked::after {
+  left: 70%;
 }
 header h1 {
   font-size: 1.5rem;
@@ -95,14 +132,6 @@ header button {
 header button:hover {
   color: var(--white);
   background-color: var(--text);
-}
-header #reset-btn {
-  color: var(--white);
-  background-color: var(--text);
-}
-header #reset-btn:hover {
-  color: var(--text);
-  background-color: var(--white);
 }
 
 section {

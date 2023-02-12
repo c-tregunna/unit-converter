@@ -12,27 +12,31 @@
 </head>
 <body>
     <div class="container">
-        <button id="dark-mode">Dark/Light Mode</button>
         <header>
+            <div class="mode-toggle">
+                <label for="dark-mode">Light/Dark Mode</label>
+                <input type="checkbox" id="dark-mode"></input>
+            </div>
             <h1>Metric/Imperial Unit Conversion</h1>
             <input class="input" id="input-box" maxlength="4"></input>
             <div class="button-contain">
                 <button id="convert-btn">Convert</button>
                 <button id="reset-btn">Reset</button>
             </div>
+
         </header>
         <section id="convert-contain">
             <div>
                 <h2>Length (Meter/Feet)</h2>
-                <p id="length-text"></p>
+                <p id="length-text">0 meters = 0 feet | 0 feet = 0 meter</p>
             </div>
             <div>
                 <h2>Volume (Liters/Gallons)</h2>
-                <p id="vol-text"></p>
+                <p id="vol-text">0 litres = 0 gallons | 0 gallons = 0 litres</p>
             </div>
             <div>
                 <h2>Mass (Kilograms/Pounds)</h2>
-                <p id="mass-text"></p>
+                <p id="mass-text">0 kilos = 0 pounds | 0 pounds = 0 kilos</p>
             </div>
         </section>
     </div>

@@ -7,10 +7,10 @@
 :root {
     --header-bg: #6943FF;
     --white: #fff;
-    --section-bg: #fefefe;
     --text: #3D3D3D;
     --border: #B295FF;
     --main-bg: #F4F4F4;
+    --section-bg: #fefefe;
     --heading-text: #5A537B;
     --para-text: #353535;
 }
@@ -44,15 +44,7 @@ body {
     color: var(--white);
     text-align: center;
     font-family: 'Inter', sans-serif;
-    #dark-mode {
-        position: fixed;
-        height: 50px;
-        width: 64px;
-        border: none;
-        top: 5px;
-        right: 5px;
-        background-color: var(--header-bg);
-    }
+
 }
 
 .container {
@@ -66,6 +58,48 @@ header {
     height: 340px;
     background-color: var(--header-bg);
     padding: 10px;
+    .mode-toggle {
+        @include flex($dir: column, $just: space-evenly, $align: center);
+        height: 60px;
+        @include medq($break: 768px) {
+            align-self: flex-end;
+            position: absolute;
+            top: 40px;
+        }
+        label {
+            font-size: .6rem;
+        }
+        #dark-mode { //going to make this a toggle button on header
+                appearance: none;
+                -webkit-appearance: none;
+                width: 45px;
+                height: 25px;
+                border: 1px solid var(--white);
+                border-radius: 25px;
+                background-color: var(--white);
+                position: relative;
+                transition: background-color .3s ease;
+                &::after {
+                  content: "";
+                  position: absolute;
+                  top: 50%;
+                  left: 30%;
+                  transform: translate(-50%, -50%);
+                  height: 20px;
+                  width: 20px;
+                  border-radius: 50%;
+                  background-color: var(--text);
+                  transition: left .3s ease, background-color .3s ease;
+                }
+                &:checked {
+                  background-color: var(--border);
+                  &::after {
+                    left: 70%;
+                  }
+                }
+            }
+        }
+
 
     h1 {
         font-size: 1.5rem;
@@ -103,14 +137,6 @@ header {
         &:hover {
             color: var(--white);
             background-color: var(--text);
-        }
-    }
-    #reset-btn {
-        color: var(--white);
-        background-color: var(--text);
-        &:hover {
-            color: var(--text);
-            background-color: var(--white);
         }
     }
 }
